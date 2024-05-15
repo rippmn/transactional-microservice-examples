@@ -140,7 +140,7 @@ def customer_pubsub():
         return 'Finished.', 200
 
     if event_type != 'order_create':
-        print('Unknown event type {}.format(event_type)')
+        print('Unknown event type {}'.format(event_type))
         return 'Finished.', 200
 
     customer_id = order['customer_id']
@@ -175,7 +175,7 @@ def customer_pubsub():
         }
         event = {
             'event_id': str(uuid.uuid4()),
-            'topic': 'customer-service-event',
+            'topic': 'order-service-event', 
             'type': 'order_checked',
             'timestamp': datetime.datetime.utcnow(),
             'published': False,

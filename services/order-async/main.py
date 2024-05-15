@@ -144,7 +144,7 @@ def order_pubsub():
         return 'Finished.', 200
 
     if event_type != 'order_checked':
-        print('Unknown event type {}.format(event_type)')
+        print('Unknown event type {}'.format(event_type)) #this message was broken
         return 'Finished.', 200
 
     customer_id = check_result['customer_id']
